@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+             x:Class="Colorful.DemoApp.App">
+    <Application.Resources>
+        <Color x:Key="Primary">Gray</Color>
+        <Color x:Key="Accent">#96d1ff</Color>
+        <Color x:Key="LightTextColor">#999999</Color>
+
+        <Color x:Key="ControlBackgroundColor">#C7F464</Color>
+        <Color x:Key="ControlTextColor">#556270</Color>
+        <Color x:Key="ControlBorderColor">#556270</Color>
+        <Color x:Key="PageBackground">#363636</Color>
+
+        <Style x:Key="PageStyle" TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="{StaticResource PageBackground}" />
+        </Style>
+
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="BorderColor" Value="{StaticResource ControlBorderColor}" />
+            <Setter Property="BorderRadius" Value="10" />
+            <Setter Property="BorderWidth" Value="2" />
+            <Setter Property="TextColor" Value="{StaticResource ControlTextColor}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource ControlBackgroundColor}" />
+        </Style>
+
+        <Style x:Key="entryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="BackgroundColor" Value="White" />
+        </Style>
+
+        <Style x:Key="labelErrorStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Red" />
+            <Setter Property="FontSize" Value="Micro" />
+            <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+            <Setter Property="VerticalOptions" Value="Start" />
+        </Style>
+
+        <Style x:Key="boxViewStyleLogin" TargetType="BoxView">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="Margin" Value="-7,0,0,-15" />
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+
+        <Style x:Key="boxViewPalletes" TargetType="BoxView">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="HeightRequest" Value="80" />
+            <Setter Property="Margin" Value="-7,-60,0,0" />
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+
+
+    </Application.Resources>
+</prism:PrismApplication>

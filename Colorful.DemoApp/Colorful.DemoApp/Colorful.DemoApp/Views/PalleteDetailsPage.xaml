@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                prism:ViewModelLocator.AutowireViewModel="True"
+                x:Class="Colorful.DemoApp.Views.PalleteDetailsPage"
+                Title="{Binding Title}"
+                Style="{StaticResource PageStyle}">
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout BindableLayout.ItemsSource="{Binding SelectedPallete.Value.colors, Mode=TwoWay}" Orientation="Horizontal"
+                                             HorizontalOptions="FillAndExpand">
+
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <BoxView  Color="{Binding ., StringFormat='#{0:N}'}" Style="{StaticResource boxViewPalletes}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+
+            <ffimageloading:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+			                        DownsampleToViewSize="true"
+			                        Source = "{Binding SelectedPallete.Value.badgeUrl}">
+            </ffimageloading:CachedImage>
+
+            <Label FontSize="Small" TextColor="White"  Margin="10,0,10,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="{Binding SelectedPallete.Value.title}" FontAttributes="Italic" />
+                            <Span Text=" by "/>
+                            <Span Text="{Binding SelectedPallete.Value.userName}" FontAttributes="Bold" />
+                            <Span Text="." />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+
+            <ListView 
+                ItemsSource="{Binding SelectedPallete.Value.colors}"
+                RowHeight="80"
+                CachingStrategy="RecycleElement">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+
+                            <StackLayout Orientation="Horizontal" Padding="10,10,10,30">
+
+                                <Frame   CornerRadius="10"   BorderColor="White"
+                                         HasShadow="true" Padding="0" HeightRequest="50" WidthRequest="200" >
+                                    <BoxView   Color="{Binding ., StringFormat='#{0:N}'}"  >
+
+                                    </BoxView>
+                                </Frame>
+
+                                <Label FontSize="Micro" TextColor="White" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  Margin="10,0,10,0" Text="{Binding ., StringFormat='#{0:N}'}">
+
+                                </Label>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

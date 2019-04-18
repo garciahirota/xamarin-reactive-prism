@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Colorful.DemoApp.Views.LogingPage"
+             Title="{Binding Title}"
+             Style="{StaticResource PageStyle}"
+             >
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <BoxView Grid.Row="1"  Color="#363636" HorizontalOptions="FillAndExpand"  HeightRequest="100" Margin="-7,-100,0,0">
+            </BoxView>
+
+            <ScrollView Grid.Row="1" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical" Padding="5,10,5,10" Spacing="10">
+                    <Label FontSize="40" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="C"  TextColor="#5fba46" />
+                                    <Span Text="O"  TextColor="#fdb827" />
+                                    <Span Text="L"  TextColor="#f5821f" />
+                                    <Span Text="O"  TextColor="#e03b3e" />
+                                    <Span Text="U"  TextColor="#963d97" />
+                                    <Span Text="R"  TextColor="#009bd8" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Text="Palletes" TextColor="White" FontSize="35"  HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-10,0,50" />
+
+                    <Entry Placeholder="Email" Text="{Binding UserName.Value, Mode=TwoWay}" Margin="20,0,20,0" WidthRequest="200" HeightRequest="40"
+                          Style="{StaticResource entryStyle}"/>
+                    <Label Text="{Binding UserErrorMessage.Value}" Style="{StaticResource labelErrorStyle}" Margin="20,0,20,0"/>
+
+                    <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password.Value, Mode=TwoWay}" Margin="20,0,20,0" WidthRequest="200" HeightRequest="40"
+                           Style="{StaticResource entryStyle}"/>
+                    <Label Text="{Binding PasswordErrorMessage.Value}" Style="{StaticResource labelErrorStyle}" Margin="20,0,20,0"/>
+                    
+                    
+                    <Button Style="{StaticResource buttonStyle}" Margin="20,0,20,0"  WidthRequest="200" HeightRequest="40" Text="Login" Command="{Binding LoginCommand}"  />
+                    <Label Text="{Binding LoginErrorMessage.Value}" Style="{StaticResource labelErrorStyle}" Margin="20,0,20,0"/>
+
+
+
+
+                    <ActivityIndicator IsVisible="{Binding IsLoading.Value}" Color="#C44D58" IsRunning="True">
+
+                    </ActivityIndicator>
+
+                </StackLayout>
+            </ScrollView>
+
+            <StackLayout  VerticalOptions="EndAndExpand" HorizontalOptions="Fill" Orientation="Horizontal" Grid.Row="1" >
+                <BoxView Color="#556270" Style="{StaticResource boxViewStyleLogin}" />
+                <BoxView Color="#4ECDC4" Style="{StaticResource boxViewStyleLogin}" />
+                <BoxView Color="#C7F464" Style="{StaticResource boxViewStyleLogin}" />
+                <BoxView Color="#FF6B6B" Style="{StaticResource boxViewStyleLogin}" />
+                <BoxView Color="#C44D58" Style="{StaticResource boxViewStyleLogin}" />
+            </StackLayout>
+        </Grid>
+
+
+    </ContentPage.Content>
+</ContentPage>

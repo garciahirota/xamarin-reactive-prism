@@ -1,0 +1,14 @@
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\bin\Debug\netstandard2.0\Colorful.DemoApp.deps.json
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\bin\Debug\netstandard2.0\Colorful.DemoApp.dll
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\bin\Debug\netstandard2.0\Colorful.DemoApp.pdb
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\obj\Debug\netstandard2.0\Views\LogingPage.xaml.g.cs
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\obj\Debug\netstandard2.0\Views\PalleteDetailsPage.xaml.g.cs
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\obj\Debug\netstandard2.0\Views\PalletesPage.xaml.g.cs
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\obj\Debug\netstandard2.0\Colorful.DemoApp.csproj.CoreCompileInputs.cache
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\obj\Debug\netstandard2.0\Colorful.DemoApp.AssemblyInfoInputs.cache
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\obj\Debug\netstandard2.0\Colorful.DemoApp.AssemblyInfo.cs
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\obj\Debug\netstandard2.0\XamlC.stamp
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\obj\Debug\netstandard2.0\Colorful.DemoApp.dll
+C:\code\Softek\Colorful.DemoApp\Colorful.DemoApp\Colorful.DemoApp\obj\Debug\netstandard2.0\Colorful.DemoApp.pdb

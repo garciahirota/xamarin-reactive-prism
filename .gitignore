@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Colorful.DemoApp/.vs/Colorful.DemoApp/v15
+/Colorful.DemoApp/Colorful.DemoApp/Colorful.DemoApp/bin/Debug/netstandard2.0
+/Colorful.DemoApp/Colorful.DemoApp/Colorful.DemoApp.Android/obj
+/Colorful.DemoApp/Colorful.DemoApp/Colorful.DemoApp.iOS/bin/iPhone/Debug
+/Colorful.DemoApp/Colorful.DemoApp/Colorful.DemoApp.iOS/obj
+/Colorful.DemoApp/Colorful.DemoApp/Colorful.DemoApp.UWP/bin/x86/Debug
+/Colorful.DemoApp/Colorful.DemoApp/Colorful.DemoApp.UWP/obj

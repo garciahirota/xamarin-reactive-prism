@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Colorful.DemoApp.Views.PalletesPage"
+             Title="{Binding Title}"
+             Style="{StaticResource PageStyle}"
+             >
+  <ContentPage.Content>
+      <StackLayout>
+
+          <StackLayout  VerticalOptions="StartAndExpand" HorizontalOptions="Fill" Orientation="Horizontal">
+              <BoxView Style="{StaticResource boxViewPalletes}"  Color="#556270"/>
+              <BoxView Style="{StaticResource boxViewPalletes}"  Color="#4ECDC4"/>
+              <BoxView Style="{StaticResource boxViewPalletes}"  Color="#C7F464"/>
+              <BoxView Style="{StaticResource boxViewPalletes}"  Color="#FF6B6B"/>
+              <BoxView Style="{StaticResource boxViewPalletes}"  Color="#C44D58"/>
+          </StackLayout>
+
+          <StackLayout Orientation="Horizontal" Padding="20,10,10,10">
+                <Entry Text="{Binding SearchWord.Value}" HorizontalOptions="FillAndExpand" Style="{StaticResource entryStyle}"/>
+              <Button HorizontalOptions="End" HeightRequest="40" WidthRequest="100" Style="{StaticResource buttonStyle}"
+                       Text="Search" Command="{Binding GetPalletesCommand}"/>
+          </StackLayout>
+
+            <ActivityIndicator IsVisible="{Binding IsLoading.Value}" Color="#C7F464" IsRunning="True">
+          </ActivityIndicator>
+
+          <ListView
+              ItemsSource="{Binding Palletes.Value}"
+              SelectedItem="{Binding SelectedPallete.Value}"
+              HasUnevenRows="true"
+              RowHeight="100"
+              CachingStrategy="RecycleElement">
+
+              <ListView.ItemTemplate>
+                  <DataTemplate>
+                      <ViewCell >
+                          <StackLayout Orientation="Horizontal" Padding="10,10,10,30">
+                              <ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Center"
+			                          WidthRequest="100" HeightRequest="80"
+			                          DownsampleToViewSize="true"
+			                          Source = "{Binding badgeUrl}">
+                              </ffimageloading:CachedImage>
+
+                              <StackLayout Orientation="Vertical">
+                                  <StackLayout BindableLayout.ItemsSource="{Binding colors}" Orientation="Horizontal"
+                                               HorizontalOptions="FillAndExpand">
+
+                                      <BindableLayout.ItemTemplate>
+                                          <DataTemplate>
+                                              <Frame   CornerRadius="10"  Margin="10,0,10,0" BorderColor="White"
+                                                          HasShadow="true" Padding="0" HeightRequest="50" WidthRequest="50" >
+
+                                                  <BoxView   Color="{Binding ., StringFormat='#{0:N}'}"  >
+
+                                                  </BoxView>
+                                              </Frame>
+                                          </DataTemplate>
+                                      </BindableLayout.ItemTemplate>
+                                  </StackLayout>
+                                  <Label FontSize="Micro" TextColor="White"  Margin="10,0,10,0">
+                                      <Label.FormattedText>
+                                          <FormattedString>
+                                              <FormattedString.Spans>
+                                                  <Span Text="{Binding title}" FontAttributes="Italic" />
+                                                  <Span Text=" by "/>
+                                                  <Span Text="{Binding userName}" FontAttributes="Bold" />
+                                                  <Span Text="." />
+                                              </FormattedString.Spans>
+                                          </FormattedString>
+                                      </Label.FormattedText>
+                                  </Label>
+                              </StackLayout>
+
+                          </StackLayout>
+
+                      </ViewCell>
+                  </DataTemplate>
+              </ListView.ItemTemplate>
+
+          </ListView>
+
+      </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
